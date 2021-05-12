@@ -1,0 +1,22 @@
+{
+  "name": "inventoryApp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.95.4",
+    "knex-migrate": "^1.7.4",
+    "mysql2": "^2.2.5",
+    "nodemon": "^2.0.7",
+    "pg": "^8.5.1",
+    "react-bootstrap": "^1.5.2"
+  }
+}
