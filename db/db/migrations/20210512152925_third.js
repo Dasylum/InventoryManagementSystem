@@ -1,4 +1,5 @@
 const tableNames = require('../../../src/constants/tableNames');
+const orderedTableNames = require('../../../src/constants/orderedTableNames');
 const {
     addDefaultColumns,
     createNameTable,
@@ -33,14 +34,14 @@ exports.up = async function (knex) {
 
     await knex.schema.createTable(tableNames.address, (table) => {
         table.increments().notNullable();
-        table.string('street_address_1', 50).notNullable();
-        table.string('street_address_2', 50);
+        table.string('street_address_1', 50).notNullable().unique();
+        table.string('street_address_2', 50).unique();
         table.string('city', 50).notNullable();
         table.string('zipcode', 15).notNullable();
         table.double('latitude').notNullable();
         table.double('longitude').notNullable();
         references(table, 'state', false);
-        references(table, 'country');
+        references(table, 'country', false);
         addDefaultColumns(table);
     });
 
@@ -117,21 +118,6 @@ exports.up = async function (knex) {
 };
 
 exports.down = async function (knex) {
-    await Promise.all([
-        tableNames.company,
-        tableNames.address,
-        tableNames.item,
-        tableNames.related_item,
-        tableNames.item_image,
-        tableNames.item_info,
-        tableNames.size,
-        tableNames.retailer,
-        tableNames.user,
-        tableNames.item_type,
-        tableNames.country,
-        tableNames.state,
-        tableNames.shape,
-        tableNames.inventory_location,
-    ].map((tableName) => knex.schema.dropTableIfExists(tableName))
+    await Promise.all(orderedTableNames.map((tableName) => knex.schema.dropTableIfExists(tableName))
     );
 };
