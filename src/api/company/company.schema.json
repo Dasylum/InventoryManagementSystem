@@ -1,0 +1,63 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "title": "Company",
+    "description": "The Company",
+    "required": [
+        "name",
+        "website_url",
+        "email",
+        "address_id"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "id": {
+            "$id": "#/properties/id",
+            "type": "integer",
+            "title": "The database ID of company."
+        },
+        "name": {
+            "$id": "#/properties/name",
+            "type": "string",
+            "title": "name"
+        },
+        "logo_url": {
+            "$id": "#/properties/logo_url",
+            "type": "string",
+            "title": "Logo URL"
+        },
+        "description": {
+            "$id": "#/properties/description",
+            "type": "string",
+            "title": "The description",
+            "examples": [
+                "Hello world"
+            ]
+        },
+        "website_url": {
+            "$id": "#/properties/website_url",
+            "type": "string",
+            "title": "The company's website url."
+        },
+        "email": {
+            "$id": "#/properties/email",
+            "type": "string",
+            "title": "The email id of company."
+        },
+        "address_id": {
+            "$id": "#/properties/address_id",
+            "type": "number",
+            "title": "The address id of company."
+        },
+        "created_at": {
+            "$id": "#/properties/created_at",
+            "type": "string",
+            "title": "The creation date of the entry of this company."
+        },
+        "updated_at": {
+            "$id": "#/properties/updated_at",
+            "type": "string",
+            "title": "The date the company data in this database was last updated."
+        }
+    }
+  }
