@@ -1,10 +1,10 @@
 const supertest = require('supertest');
 const app = require('../../app');
 
-describe('/users', () => {
+describe('/address', () => {
     it('Should respond with something', async () => {
         const response = await supertest(app)
-        .get('/api/v1/users')
+        .get('/api/v1/address')
         .expect('Content-Type', /json/)
         .expect(200);
 

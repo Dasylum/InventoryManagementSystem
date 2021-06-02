@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const crypto = require('crypto');
 
 const countries = require('../../../src/constants/countries');
+const states = require('../../../src/constants/states');
 
 exports.seed = async function(knex) {
   // Deletes ALL existing entries
@@ -19,4 +20,5 @@ exports.seed = async function(knex) {
 
   await knex(tableNames.user).insert(user);
   await knex(tableNames.country).insert(countries);
+  await knex(tableNames.state).insert(states);
 };
