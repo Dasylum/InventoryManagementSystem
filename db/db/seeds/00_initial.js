@@ -18,7 +18,33 @@ exports.seed = async function(knex) {
     name: 'Deepak'
   }
 
+  const shapes = [
+    {
+      name: 'Circular'
+    },
+    {
+      name: 'Cuboid'
+    },
+    {
+      name: 'Round'
+    },
+    {
+      name: 'Cylindrical'
+    },
+    {
+      name: 'Cube'
+    }
+  ]
+
+  const item_type = [
+    {
+      name: "Hardware"
+    }
+  ]
+
   await knex(tableNames.user).insert(user);
   await knex(tableNames.country).insert(countries);
   await knex(tableNames.state).insert(states);
+  await knex(tableNames.shape).insert(shapes);
+  await knex(tableNames.item_type).insert(item_type);
 };

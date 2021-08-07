@@ -1,3 +1,8 @@
 {
-    "jest.jestCommandLine": "jest src\\app.test.js"
+    "jest.jestCommandLine": "jest src\\app.test.js",
+    "files.associations": {
+        "iostream": "cpp",
+        "new": "cpp",
+        "iosfwd": "cpp"
+    }
 }
