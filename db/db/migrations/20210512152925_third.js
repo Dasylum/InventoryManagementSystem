@@ -61,9 +61,10 @@ exports.up = async function (knex) {
         table.increments().notNullable();
         table.string('name').notNullable();
         table.double('length').notNullable();
-        table.double('width').notNullable();
-        table.double('height').notNullable();
-        table.double('volume').notNullable();
+        table.double('width');
+        table.double('height');
+        table.double('radius');
+        table.double('volume');
         references(table, 'shape');
         addDefaultColumns(table);
     });
