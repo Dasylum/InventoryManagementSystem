@@ -31,15 +31,6 @@ module.exports = {
     },
     async update(data, id) {
         try {
-            const validProps = ['name', 'description', 'image_url'];
-            for(var i in Object.keys(data)){
-                if(!validProps.includes(Object.keys(data)[i])){
-                    const error = new Error;
-                    error.message = "This property doesn't exist or can't be updated";
-                    error.status = 500;
-                    throw error;
-                }
-            }
             return await db(tableNames.inventory_location)
             .where({
                 id
