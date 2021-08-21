@@ -10,11 +10,11 @@ module.exports = {
     },
 
     async get(id) {
-        const [state] = await db(tableNames.country)
+        const [country] = await db(tableNames.country)
             .select(fields)
             .where({
                 id
             });
-        return state;
+        return country;
     }   
 }

@@ -11,13 +11,13 @@ describe('/countries', () => {
         expect(response.body.length).toBeGreaterThan(0);
     })
 
-    it('Should respond with a specific state id', async () => {
+    it('Should respond with a specific country id', async () => {
         const response = await supertest(app)
-        .get('/api/v1/countries/1')
+        .get('/api/v1/countries/250')
         .expect('Content-Type', /json/)
         .expect(200);
 
-        expect(response.body.id).toBe(1);
+        expect(response.body.id).toBe(250);
     })
 
     it('Should respond with 404 for countries not found', async () => {
