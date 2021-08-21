@@ -6,11 +6,11 @@ const fields = ['id', 'name'];
 
 module.exports = {
     find() {
-        return db(tableNames.state).select(fields)
+        return db(tableNames.country).select(fields)
     },
 
     async get(id) {
-        const [state] = await db(tableNames.state)
+        const [state] = await db(tableNames.country)
             .select(fields)
             .where({
                 id

@@ -1,0 +1,61 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "title": "Item",
+    "description": "The Item",
+    "required": [
+        "name",
+        "description",
+        "user_id",
+        "item_type_id",
+        "company_id"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "id": {
+            "$id": "#/properties/id",
+            "type": "integer",
+            "title": "The database ID of item."
+        },
+        "name": {
+            "$id": "#/properties/name",
+            "type": "string",
+            "title": "Name of the item."
+        },
+        "description": {
+            "$id": "#/properties/description",
+            "type": "string",
+            "title": "Description of the item."
+        },
+        "user_id": {
+            "$id": "#/properties/user_id",
+            "type": "integer",
+            "title": "The user id of the user who enetered the item data."
+        },
+        "size_id": {
+            "$id": "#/properties/shape_id",
+            "type": "integer",
+            "title": "The shape id of item's shape."
+        },
+        "company_id": {
+            "$id": "#/properties/company_id",
+            "type": "integer",
+            "title": "The company id of item's manufacturer."
+        },
+        "item_type_id": {
+            "$id": "#/properties/item_info_id",
+            "type": "integer",
+            "title": "Item info id regarding the item."
+        },
+        "created_at": {
+            "$id": "#/properties/created_at",
+            "type": "string",
+            "title": "The creation date of the user."
+        },
+        "updated_at": {
+            "$id": "#/properties/updated_at",
+            "type": "string",
+            "title": "The date the user was last updated."
+        }
+    }
+  }
