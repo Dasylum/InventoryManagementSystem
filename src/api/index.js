@@ -9,6 +9,7 @@ const size = require('./size/size.routes');
 const item = require('./item/item.routes');
 const countries = require('./country/countries.routes');
 const inventory_location = require('./inventory_location/inventory_location.routes');
+const item_image = require('./item_image/item_image.routes');
 
 const project = require('../constants/project');
 
@@ -23,6 +24,7 @@ router.use('/size', size);
 router.use('/item', item);
 router.use('/countries', countries);
 router.use('/inventory_location', inventory_location);
+router.use('/item_image', item_image)
 
 router.get('/', (req, res) => {
     res.json({
