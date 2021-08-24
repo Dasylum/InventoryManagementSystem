@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "test": "jest"
+    "test": "jest",
+    "migrate:latest": "cd db && npx knex migrate:latest",
+    "seed:run": "cd db && npx knex seed:run"
   },
   "keywords": [],
   "author": "",

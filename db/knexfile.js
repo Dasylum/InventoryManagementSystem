@@ -7,7 +7,7 @@ module.exports = {
     connection: {
       host: '127.0.0.1',
       user: 'root',
-      password: 'Ds8764082465',
+      password: 'root',
       database: 'inventoryApp'
     },
     migrations: {
