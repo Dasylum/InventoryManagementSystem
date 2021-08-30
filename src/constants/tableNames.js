@@ -12,5 +12,10 @@ module.exports = {
     item_info: 'item_info',
     item_image: 'item_image',
     related_item: 'related_item',
-    retailer: 'retailer'
+    retailer: 'retailer',
+    billing: 'billing',
+    cart: 'cart',
+    restock: 'restock',
+    repair: 'repair',
+    charges: 'charges'
   };
