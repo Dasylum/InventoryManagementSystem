@@ -1,6 +1,11 @@
 const tableNames = require('./tableNames');
 
 module.exports = [
+    tableNames.charges,
+    tableNames.repair,
+    tableNames.restock,
+    tableNames.cart,
+    tableNames.billing,
     tableNames.item_image,
     tableNames.related_item,
     tableNames.item_info,

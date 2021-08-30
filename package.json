@@ -8,6 +8,7 @@
     "test": "jest",
     "migrate:create": "cd db && npx knex migrate:make",
     "migrate:latest": "cd db && npx knex migrate:latest",
+    "migrate:down": "cd db && npx knex migrate:down",
     "seed:run": "cd db && npx knex seed:run"
   },
   "keywords": [],
