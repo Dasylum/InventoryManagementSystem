@@ -110,7 +110,7 @@ exports.up = async function (knex) {
 
     await knex.schema.createTable(tableNames.item_image, (table) => {
         table.increments().notNullable();
-        references(table, 'item');
+        references(table, 'item').notNullable();
         url(table, 'image_url');
         addDefaultColumns(table);
     })
