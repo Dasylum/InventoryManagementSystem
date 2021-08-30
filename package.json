@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "nodemon index.js",
     "test": "jest",
+    "migrate:create": "cd db && npx knex migrate:make",
     "migrate:latest": "cd db && npx knex migrate:latest",
     "seed:run": "cd db && npx knex seed:run"
   },
