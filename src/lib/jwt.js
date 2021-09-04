@@ -15,14 +15,12 @@ function sign(payload) {
 function verify(req, res, next) {
     try {
         if(req.headers['authorization']){
-            const token = req.headers['authorization'].split(" ");
+            const token = req.headers['authorization'].split(" ")[1];
             jwt.verify(token, process.env.JWT_SECRET, (error, decoded) => {
                 if(error){
-                    let error = new Error();
-                    error.message = "Invalid token";
                     throw error;
                 }
-                next(decoded);
+                next();
             })
         }
         else{

@@ -16,6 +16,8 @@ exports.up = async function (knex) {
             email(table, 'email').notNullable().unique();
             table.string('name').notNullable();
             table.string('password', 127).notNullable();
+            table.boolean('isAdmin').notNullable().defaultTo(false);
+            table.boolean('isManager').notNullable().defaultTo(false);
             table.datetime('last_login');
             addDefaultColumns(table);
         }),
