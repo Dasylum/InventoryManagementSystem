@@ -7,7 +7,6 @@ const {
     email,
     references,
 } = require('../../../src/lib/tableUtils');
-const { ref } = require('objection');
 
 exports.up = async function(knex) {
   await Promise.all([
@@ -15,7 +14,8 @@ exports.up = async function(knex) {
           table.increments().notNullable();
           table.string('name').notNullable();
           table.string('phone');
-          table.enum('service', ['sell', 'repair']).defaultTo('sell');
+          table.boolean('complete').notNullable().defaultTo(false);
+          table.enum('service', ['sell', 'repair', 'purchase']).defaultTo('sell');
           references(table, 'user', true);
           addDefaultColumns(table);
       }),
@@ -37,13 +37,6 @@ exports.up = async function(knex) {
           table.integer('quantity').unsigned();
           references(table, 'billing', true);
           references(table, 'item', false);
-          addDefaultColumns(table);
-      }),
-      knex.schema.createTable(tableNames.restock, (table) => {
-          table.increments().notNullable();
-          table.integer('quantity');
-          references(table, 'item', true);
-          references(table, 'address', true);
           addDefaultColumns(table);
       })
   ])

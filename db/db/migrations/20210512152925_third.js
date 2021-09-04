@@ -82,13 +82,6 @@ exports.up = async function (knex) {
         addDefaultColumns(table);
     });
 
-    await knex.schema.createTable(tableNames.retailer, (table) => {
-        table.increments().notNullable();
-        table.string('name').notNullable();
-        references(table, 'address');
-        addDefaultColumns(table);
-    })
-
     await knex.schema.createTable(tableNames.item_info, (table) => {
         table.increments().notNullable();
         table.datetime('purchase_date').notNullable();
@@ -96,12 +89,20 @@ exports.up = async function (knex) {
         table.datetime('last_used').notNullable();
         table.double('purchase_price').notNullable();
         table.double('msrp').notNullable();
+        table.integer('quantity').notNullable().defaultTo(1);
         references(table, 'user');
         references(table, 'item');
-        references(table, 'retailer');
         references(table, 'inventory_location');
         addDefaultColumns(table);
     });
+
+    await knex.schema.createTable(tableNames.retailer, (table) => {
+        table.increments().notNullable();
+        table.string('name').notNullable();
+        references(table, 'item_info');
+        references(table, 'address');
+        addDefaultColumns(table);
+    })
 
     await knex.schema.createTable(tableNames.related_item, (table) => {
         table.increments().notNullable();
