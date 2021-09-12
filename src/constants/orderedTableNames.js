@@ -7,7 +7,7 @@ module.exports = [
     tableNames.billing,
     tableNames.item_image,
     tableNames.related_item,
-    tableNames.retailer,
+    tableNames.customer,
     tableNames.item_info,
     tableNames.inventory_location,
     tableNames.item,

@@ -96,10 +96,11 @@ exports.up = async function (knex) {
         addDefaultColumns(table);
     });
 
-    await knex.schema.createTable(tableNames.retailer, (table) => {
+    await knex.schema.createTable(tableNames.customer, (table) => {
         table.increments().notNullable();
         table.string('name').notNullable();
-        references(table, 'item_info');
+        table.string('phone');
+        table.string('email');
         references(table, 'address');
         addDefaultColumns(table);
     })
