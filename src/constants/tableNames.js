@@ -15,7 +15,6 @@ module.exports = {
     retailer: 'retailer',
     billing: 'billing',
     cart: 'cart',
-    restock: 'restock',
     repair: 'repair',
     charges: 'charges'
   };

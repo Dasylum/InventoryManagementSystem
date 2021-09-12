@@ -10,12 +10,13 @@ exports.seed = async function(knex) {
 
   await Promise.all(Object.keys(tableNames).map(table => knex(table).del()));
 
-  const password = crypto.randomBytes(15).toString('hex');
+  const password = 'Admin@1234';
 
   const user = {
     email: 'Dasylum@inventory.com',
     password: await bcrypt.hash(password, 12),
-    name: 'Deepak'
+    name: 'Deepak',
+    isAdmin: true
   }
 
   const shapes = [
