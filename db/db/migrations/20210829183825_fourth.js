@@ -12,11 +12,11 @@ exports.up = async function(knex) {
   await Promise.all([
       knex.schema.createTable(tableNames.billing, (table)=>{
           table.increments().notNullable();
-          table.string('name').notNullable();
-          table.string('phone');
           table.boolean('complete').notNullable().defaultTo(false);
           table.enum('service', ['sell', 'repair', 'purchase']).defaultTo('sell');
           references(table, 'user', true);
+          references(table, 'customer', true, 'customer');
+          references(table, 'customer', true, 'retailer');
           addDefaultColumns(table);
       }),
       knex.schema.createTable(tableNames.charges, (table) => {
