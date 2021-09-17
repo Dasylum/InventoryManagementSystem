@@ -1,38 +1,34 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "type": "object",
-    "title": "Billing",
-    "description": "The Bill",
+    "title": "Cart",
+    "description": "The Cart",
     "required": [
-        "retailer_id",
-        "customer_id"
+        "quantity",
+        "billing_id",
+        "item_id"
     ],
     "additionalProperties": false,
     "properties": {
         "id": {
             "$id": "#/properties/id",
             "type": "integer",
-            "title": "The database ID of a bill."
+            "title": "The database ID of a cart."
         },
-        "customer_id": {
-            "$id": "#/properties/customer_id",
+        "billing_id": {
+            "$id": "#/properties/billing_id",
             "type": "integer",
-            "title": "Details of the customer."
+            "title": "Details of the bill."
         },
-        "service": {
-            "$id": "#/properties/service",
-            "type": "string",
-            "title": "Type of service provided to the customer."
-        },
-        "retailer_id": {
-            "$id": "#/properties/retailer_id",
+        "item_id": {
+            "$id": "#/properties/item_id",
             "type": "integer",
-            "title": "The retailer id."
+            "title": "Id of the item."
         },
-        "user_id": {
-            "$id": "#/properties/user_id",
+        "quantity": {
+            "$id": "#/properties/quantity",
             "type": "integer",
-            "title": "The user id of the user who enetered the item data."
+            "title": "Quantity of the item bought."
         },
         "created_at": {
             "$id": "#/properties/created_at",

@@ -20,6 +20,7 @@ function verify(req, res, next) {
                 if(error){
                     throw error;
                 }
+                req.user = decoded;
                 next();
             })
         }

@@ -13,6 +13,7 @@ const item_image = require('./item_image/item_image.routes');
 const item_type = require('./item_type/item_type.routes');
 const related_item = require('./related_item/related_item.routes');
 const billing = require('./billing/billing.routes');
+const cart = require('./cart/cart.routes');
 
 const project = require('../constants/project');
 
@@ -33,6 +34,7 @@ router.use('/item_image', authMiddleware, item_image);
 router.use('/item_type', authMiddleware, item_type);
 router.use('/related_item', authMiddleware, related_item);
 router.use('/billing', authMiddleware, billing);
+router.use('/cart', authMiddleware, cart);
 
 router.get('/', (req, res) => {
     res.json({
