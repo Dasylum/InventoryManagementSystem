@@ -12,8 +12,9 @@ exports.up = async function(knex) {
   await Promise.all([
       knex.schema.createTable(tableNames.billing, (table)=>{
           table.increments().notNullable();
-          table.boolean('complete').notNullable().defaultTo(false);
+          table.enum('complete', ['Bill Initiated', 'Payment Pending', 'Adding Cart', 'Order Complete']).notNullable().defaultTo("Bill Initiated");
           table.enum('service', ['sell', 'repair', 'purchase']).defaultTo('sell');
+          table.enum('payment_method', ['Card', 'Wallet', 'UPI', 'Cash']).defaultTo('Cash');
           references(table, 'user', true);
           references(table, 'customer', true, 'customer');
           references(table, 'customer', true, 'retailer');
