@@ -3,7 +3,7 @@ const config = require('../config');
 module.exports = {
 
   development: {
-    client: 'mysql2',
+    client: 'pg',
     connection: {
       host: config.db_host,
       user: config.db_user,

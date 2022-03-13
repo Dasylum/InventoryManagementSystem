@@ -1,6 +1,7 @@
 const tableNames = require('./tableNames');
 
 module.exports = [
+    tableNames.spare_parts,
     tableNames.charges,
     tableNames.repair,
     tableNames.cart,
@@ -18,5 +19,5 @@ module.exports = [
     tableNames.state,
     tableNames.country,
     tableNames.user,
-    tableNames.item_type
+    tableNames.category
 ]

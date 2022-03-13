@@ -6,30 +6,30 @@ const fields = ["id", "name"];
 
 module.exports = {
     find() {
-        return db(tableNames.item_type).select(fields);
+        return db(tableNames.category).select(fields);
     },
     async get(id) {
-        const [item_type] = await db(tableNames.item_type)
+        const [category] = await db(tableNames.category)
             .select(fields)
             .where({
                 id
             });
-        return item_type;
+        return category;
     },
     async post(data) {
         // Add validation on data ?
        try {
-        const item_type = {
+        const category = {
             name: data.name,
         }
-        return await db(tableNames.item_type).insert(item_type, ["id"]);
+        return await db(tableNames.category).insert(category, ["id"]);
        } catch (error) {
            throw error;
        }
     },
     async update(data, id) {
         try {
-            return await db(tableNames.item_type)
+            return await db(tableNames.category)
             .where({
                 id
             })

@@ -7,7 +7,7 @@
         "name",
         "description",
         "user_id",
-        "item_type_id",
+        "category_id",
         "company_id"
     ],
     "additionalProperties": false,
@@ -42,8 +42,8 @@
             "type": "integer",
             "title": "The company id of item's manufacturer."
         },
-        "item_type_id": {
-            "$id": "#/properties/item_info_id",
+        "category_id": {
+            "$id": "#/properties/category_id",
             "type": "integer",
             "title": "Item info id regarding the item."
         },

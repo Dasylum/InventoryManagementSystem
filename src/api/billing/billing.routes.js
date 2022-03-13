@@ -40,7 +40,7 @@ router.post('/', async (req, res, next) => {
             req.body.customer_id = customer.id;
             delete req.body.customer;
         }
-        req.body.user_id = 1;
+        req.body.user_id = req.user.id;
 
         const billing = await Billing
             .query()

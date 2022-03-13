@@ -1,6 +1,6 @@
 module.exports = {
     user: 'user',
-    item_type: 'item_type',
+    category: 'category',
     state: 'state',
     country: 'country',
     shape: 'shape',
@@ -16,5 +16,6 @@ module.exports = {
     billing: 'billing',
     cart: 'cart',
     repair: 'repair',
-    charges: 'charges'
+    charges: 'charges',
+    spare_parts: 'spare_parts'
   };
