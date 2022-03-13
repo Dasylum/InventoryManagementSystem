@@ -11,6 +11,19 @@ class Item extends Model {
     static get jsonSchema() {
         return schema;
     }
+
+    static get relationMappings() {
+        return {
+            category: {
+                relation: Model.BelongsToOneRelation,
+                modelClass: require('../category/category.model'),
+                join: {
+                    from: 'category.id',
+                    to: 'item.category_id'
+                }
+            }
+        }
+    }
 }
 
 module.exports = Item;

@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const { errorHandler } = require('../middlewares');
 
 function sign(payload) {
     return new Promise((resolve, reject) => {
@@ -11,6 +12,29 @@ function sign(payload) {
     })
 }
 
+function verify(req, res, next) {
+    try {
+        if(req.headers['authorization']){
+            const token = req.headers['authorization'].split(" ")[1];
+            jwt.verify(token, process.env.JWT_SECRET, (error, decoded) => {
+                if(error){
+                    throw error;
+                }
+                req.user = decoded;
+                next();
+            })
+        }
+        else{
+            let error = new Error();
+            error.message = "Unauthorized"
+            throw error;
+        }
+    } catch (error) {
+        throw error;
+    }
+}
+
 module.exports = {
     sign,
+    verify
 }

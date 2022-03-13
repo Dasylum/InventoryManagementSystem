@@ -1,0 +1,58 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "title": "Billing",
+    "description": "The Bill",
+    "required": [
+        "retailer_id",
+        "customer_id"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "id": {
+            "$id": "#/properties/id",
+            "type": "integer",
+            "title": "The database ID of a bill."
+        },
+        "customer_id": {
+            "$id": "#/properties/customer_id",
+            "type": "integer",
+            "title": "Details of the customer."
+        },
+        "service": {
+            "$id": "#/properties/service",
+            "type": "string",
+            "title": "Type of service provided to the customer."
+        },
+        "retailer_id": {
+            "$id": "#/properties/retailer_id",
+            "type": "integer",
+            "title": "The retailer id."
+        },
+        "user_id": {
+            "$id": "#/properties/user_id",
+            "type": "integer",
+            "title": "The user id of the user who enetered the item data."
+        },
+        "complete": {
+            "$id": "#/properties/complete",
+            "type": "string",
+            "enum": ["Payment Pending", "Bill Initiated", "Adding Cart", "Order Complete"]
+        },
+        "payment_method": {
+            "$id": "#/properties/payment_method",
+            "type": "string",
+            "enum": ["Card", "Wallet", "UPI", "Cash"]
+        },
+        "created_at": {
+            "$id": "#/properties/created_at",
+            "type": "string",
+            "title": "The creation date of the bill."
+        },
+        "updated_at": {
+            "$id": "#/properties/updated_at",
+            "type": "string",
+            "title": "The date the bill was last updated."
+        }
+    }
+  }

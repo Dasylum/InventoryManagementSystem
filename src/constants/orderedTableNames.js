@@ -1,10 +1,15 @@
 const tableNames = require('./tableNames');
 
 module.exports = [
+    tableNames.spare_parts,
+    tableNames.charges,
+    tableNames.repair,
+    tableNames.cart,
+    tableNames.billing,
     tableNames.item_image,
     tableNames.related_item,
+    tableNames.customer,
     tableNames.item_info,
-    tableNames.retailer,
     tableNames.inventory_location,
     tableNames.item,
     tableNames.size,
@@ -14,5 +19,5 @@ module.exports = [
     tableNames.state,
     tableNames.country,
     tableNames.user,
-    tableNames.item_type
+    tableNames.category
 ]

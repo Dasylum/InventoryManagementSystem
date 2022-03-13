@@ -1,14 +1,14 @@
-// Update with your config settings.
+const config = require('../config');
 
 module.exports = {
 
   development: {
-    client: 'mysql2',
+    client: 'pg',
     connection: {
-      host: '127.0.0.1',
-      user: 'root',
-      password: 'Ds8764082465',
-      database: 'inventoryApp'
+      host: config.db_host,
+      user: config.db_user,
+      password: config.db_pass,
+      database: config.db
     },
     migrations: {
       directory: __dirname + '/db/migrations',
